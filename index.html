@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Cheer App</title>
-    <!-- Using Tailwind CDN for styling -->
+    <!-- Tailwind CSS CDN for modern and responsive styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="min-h-screen bg-[#FFF9F2] flex flex-col items-center justify-center p-4">
     <main class="w-full max-w-2xl">
         <div class="relative w-full">
+            <!-- Decorative Background circles -->
             <div class="absolute -top-6 -left-6 w-24 h-24 bg-[#4D96FF] rounded-full opacity-20"></div>
             <div class="absolute -bottom-8 -right-8 w-32 h-32 bg-[#FFD93D] rounded-full opacity-30"></div>
             
             <div class="relative bg-white border-8 border-[#2D3436] rounded-[60px] p-16 shadow-[16px_16px_0px_0px_#2D3436] flex flex-col items-center text-center">
+                <!-- Top Decorative Icon Box -->
                 <div class="flex justify-center mb-8">
-                    <!-- Icon placeholder replacement (using standard unicode or lucide via CDN?) -->
-                    <!-- Since I can't use Lucide components easily without more setup, I'll use a standard star/sparkle unicode or SVG directly -->
                     <div class="w-16 h-16 bg-[#FF6B6B] rounded-2xl rotate-3 flex items-center justify-center shadow-lg">
                         <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
@@ -25,18 +25,21 @@
                     </div>
                 </div>
                 
+                <!-- Display Header -->
                 <h1 class="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-rose-500 to-indigo-500 mb-8 tracking-tight">HAPPY</h1>
                 
+                <!-- Random Message Container representing fixed height to prevent structural movement -->
                 <div class="h-40 flex items-center justify-center mb-8">
                     <p id="message-text" class="text-2xl text-[#2D3436] leading-relaxed font-bold animate-fade-in">
                         "오늘도 정말 고생 많았어요! 당신은 충분히 잘하고 있어요."
                     </p>
                 </div>
 
+                <!-- Primary Interact Button -->
                 <button id="refresh-button"
-                    class="group relative flex items-center gap-4 px-12 py-6 bg-[#6BCB77] border-4 border-[#2D3436] rounded-full text-white text-2xl font-black hover:translate-y-1 transition-transform shadow-[4px_4px_0px_0px_#2D3436]"
+                    class="group relative flex items-center gap-4 px-12 py-6 bg-[#6BCB77] border-4 border-[#2D3436] rounded-full text-white text-2xl font-black hover:translate-y-1 transition-all active:translate-y-2 shadow-[4px_4px_0px_0px_#2D3436] hover:shadow-[2px_2px_0px_0px_#2D3436]"
                 >
-                    <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg class="w-8 h-8 animate-spin-lazy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                     </svg>
                     새로운 응원 받기

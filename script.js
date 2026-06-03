@@ -15,21 +15,23 @@ const messageText = document.getElementById('message-text');
 const refreshButton = document.getElementById('refresh-button');
 
 function getRandomMessage() {
-    let newMessage = messageText.innerText.replace(/"/g, '');
-    let randomMessage = newMessage;
+    let currentText = messageText.innerText.replace(/"/g, '');
+    let randomMessage = currentText;
     
-    while (randomMessage === newMessage) {
+    while (randomMessage === currentText) {
         randomMessage = cheerMessages[Math.floor(Math.random() * cheerMessages.length)];
     }
     
-    // Trigger animation
+    // Trigger fade animation
     messageText.classList.remove('animate-fade-in');
     
-    // Force reflow to restart animation
+    // Trigger a reflow to reset CSS transition animation
     void messageText.offsetWidth;
     
     messageText.classList.add('animate-fade-in');
     messageText.innerText = `"${randomMessage}"`;
 }
 
-refreshButton.addEventListener('click', getRandomMessage);
+if (refreshButton) {
+    refreshButton.addEventListener('click', getRandomMessage);
+}
