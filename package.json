@@ -3,11 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint .",
-    "clean": "next clean"
+    "dev": "npx serve . -p 3000",
+    "build": "mkdir -p dist && cp index.html style.css script.js dist/",
+    "lint": "echo 'No linting'"
   },
   "dependencies": {
     "@google/genai": "^1.17.0",
